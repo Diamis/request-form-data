@@ -30,7 +30,7 @@ const App = () => {
         Authorization: `Bearer ${token}`,
         "Content-Type": "multipart/form-data",
       },
-      body: formData,
+      data: formData,
     })
       .then(console.log)
       .catch(console.error);
