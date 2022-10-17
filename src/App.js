@@ -26,7 +26,10 @@ const App = () => {
     axios({
       url,
       method: "POST",
-      headers: { Authorization: `Bearer ${token}` },
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "multipart/form-data",
+      },
       body: formData,
     })
       .then(console.log)
