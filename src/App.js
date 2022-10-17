@@ -18,7 +18,7 @@ const App = () => {
     const files = fileList.map((file) => file.originFileObj);
 
     files.forEach((file) => formData.append("images", file));
-    formData.append("product", JSON.stringify(product));
+    formData.append("product", JSON.stringify(product.trim()));
 
     console.log("values", values);
     console.log("files", files);
@@ -27,7 +27,7 @@ const App = () => {
       url,
       method: "POST",
       headers: {
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${token.trim()}`,
         "Content-Type": "multipart/form-data",
       },
       data: formData,
