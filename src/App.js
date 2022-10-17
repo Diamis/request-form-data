@@ -17,7 +17,7 @@ const App = () => {
     const formData = new FormData();
     const files = fileList.map((file) => file.originFileObj);
 
-    formData.append("images", files);
+    files.forEach((file) => formData.append("images", file));
     formData.append("product", JSON.stringify(product));
 
     console.log("values", values);
